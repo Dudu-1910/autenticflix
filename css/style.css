@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2? family= Dancing+Script & display=swap');
 @import url('https://fonts.googleapis.com/css2? family= Comic+Neue:wght@300 & display=swap');
-/* font-family: 'Dancing Script', cursiva;   FONT HOME */
-/* família de fontes: 'Comic Neue', cursiva;   FONT DEMAIS */
 
 html {
   scroll-behavior: smooth;
@@ -43,6 +41,11 @@ body {
   margin-right: 15px;
   padding: 10px;
   text-decoration: none;
+  transition: 0.3s;
+}
+
+.p-navbar:hover {
+  opacity: 0.7;
 }
 
 li {
@@ -84,9 +87,11 @@ li:first-child {
   font-weight: 100;
 }
 
+
 .titulo-filmes,
 .titulo-series,
-.titulo-desenhos {
+.titulo-desenhos,
+.titulo-add-usuario {
   color: red;
   font-size: 2.5em;
   font-weight: 200;
@@ -104,32 +109,69 @@ li:first-child {
   color: #fff;
 }
 
-body>.img-filmes {
+.p-busca-usuario {
+  font-weight: 150;
+  color: #fff;
+  font-size: 1.2em;
+  padding: 3px;
+}
+
+.p-busca-usuario:first-child {
+  margin-top: 25px;
+}
+
+body>.todas-img {
   margin: 0 10px;
 }
 
-.img-filmes,
-.img-series,
-.img-desenhos {
+.todas-img {
   max-height: 250px;
   max-width: 200px;
   transition: all 0.5s;
+  padding: 10px;
+
 }
 
-.img-filmes:hover,
-.img-series:hover,
-.img-desenhos:hover {
+.todas-img:hover {
   cursor: pointer;
   -webkit-transform: scale(1.5);
   transform: scale(1.5);
 }
 
-.img-desenhos,
-.img-series {
-  padding: 10px;
+#listaFilmes img {
+  margin: 10px;
+  max-height: 250px;
+  min-height: 250px;
 }
 
-.frase-final {
+.form-wrapper {
+  margin: 0 0 15px;
+}
+
+.form-wrapper input {
+  display: block;
+  margin: 5px auto;
+  padding: 10px 15px;
+}
+
+.form-wrapper button {
+  border: 0;
+  color: #ffffff;
+  background: #da1e26;
+  font-weight: bold;
+  padding: 15px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-wrapper button:hover {
+  opacity: 0.8;
+}
+
+.frase-motivacional {
   color: red;
   padding: 30px 0 0;
   font-size: 25px;
@@ -140,12 +182,51 @@ footer {
   background: rgb(36, 37, 41);
   display: block;
   margin-top: 20px;
+  padding: 20px;
 }
 
-.rodape {
+.p-footer {
   color: #fff;
   font-size: 1.2em;
   font-weight: 200;
-  padding: 40px;
-  margin-bottom: 0;
+  padding: 10px;
+  margin: 0;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border: none;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
